@@ -12,15 +12,16 @@ describe('loadDays', () => {
     spyOn(store, 'dispatch');
     spyOn(NotificationActions, 'resetMessages');
 
-    let apiDays = { '11': { school_holidays: true }};
-    let transformedDays = { '11': { schoolHolidays: true }};
+    let day = { day: '11', schoolHolidays: true };
+    let apiDays = [day];
+    let transformedDays = { '11': day };
     spyOn(DayApi, 'getDays').and.returnValue(Promise.resolve(apiDays))
-    spyOn(Transformers, 'transformFromApi').and.returnValue({ schoolHolidays: true });
+    spyOn(Transformers, 'transformFromApi').and.returnValue(day);
 
     return loadDays().then(() => {
   		expect(DayApi.getDays).toHaveBeenCalledWith(2, 2015);
   		expect(NotificationActions.resetMessages).toHaveBeenCalled();
-      expect(Transformers.transformFromApi).toHaveBeenCalledWith({ school_holidays: true });
+      expect(Transformers.transformFromApi).toHaveBeenCalledWith(day);
   		expect(store.dispatch).toHaveBeenCalledWith({ type: 'SET_DAYS', days: transformedDays });
     });
   });

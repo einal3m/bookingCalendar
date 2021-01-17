@@ -11,8 +11,8 @@ export const loadDays = () => {
 
   return getDays(state.month, state.year).then((days) => {
   	let transformedDays = {};
-  	Object.keys(days).forEach(key => {
-  		transformedDays[key] = transformFromApi(days[key])
+  	days.forEach(day => {
+  		transformedDays[day.day] = transformFromApi(day)
   	});
 
     store.dispatch({type: SET_DAYS, days: transformedDays});

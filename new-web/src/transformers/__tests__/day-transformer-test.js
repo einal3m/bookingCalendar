@@ -2,34 +2,34 @@ import { transformFromApi } from '../day-transformer';
 
 describe('transformFromApi', () => {
   describe('school holiday', () => {
-  	it('sets schoolHoliday to true if api school_holiday is set to 1', () => {
-      const apiDay = { school_holiday: 1 }
+  	it('sets schoolHoliday to true if api schoolHoliday is set to 1', () => {
+      const apiDay = { schoolHoliday: 1 }
       const transformedDay = transformFromApi(apiDay);
       expect(transformedDay.schoolHoliday).toEqual(true);
   	});
 
-  	it('sets schoolHoliday to false if api school_holiday is missing', () => {
+  	it('sets schoolHoliday to false if api schoolHoliday is missing', () => {
       const apiDay = {}
       const transformedDay = transformFromApi(apiDay);
       expect(transformedDay.schoolHoliday).toEqual(false);
   	});
 
-  	it('sets schoolHoliday to true if api school_holiday is set to true', () => {
-      const apiDay = { school_holiday: true }
+  	it('sets schoolHoliday to true if api schoolHoliday is set to true', () => {
+      const apiDay = { schoolHoliday: true }
       const transformedDay = transformFromApi(apiDay);
       expect(transformedDay.schoolHoliday).toEqual(true);
   	});
 
-  	it('sets schoolHoliday to false if api school_holiday is set to false', () => {
-      const apiDay = { school_holiday: false }
+  	it('sets schoolHoliday to false if api schoolHoliday is set to false', () => {
+      const apiDay = { schoolHoliday: false }
       const transformedDay = transformFromApi(apiDay);
       expect(transformedDay.schoolHoliday).toEqual(false);
   	});
   });
 
   describe('public holiday', () => {
-  	it('sets publicHoliday to api public_holiday if set', () => {
-      const apiDay = { public_holiday: 'Good Friday' }
+  	it('sets publicHoliday to api publicHoliday if set', () => {
+      const apiDay = { publicHoliday: 'Good Friday' }
       const transformedDay = transformFromApi(apiDay);
       expect(transformedDay.publicHoliday).toEqual('Good Friday');
   	});

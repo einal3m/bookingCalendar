@@ -9,11 +9,11 @@ export const transformFromApi = (day) => {
 };
 
 function isSchoolHoliday(day) {
-  return (day.school_holiday == 1) || (day.school_holiday == true)
+  return (day.schoolHoliday == 1) || (day.schoolHoliday == true)
 }
 
 function publicHoliday(day) {
-  return day.public_holiday ? day.public_holiday : null;
+  return day.publicHoliday ? day.publicHoliday : null;
 }
 
 function notes(day) {
