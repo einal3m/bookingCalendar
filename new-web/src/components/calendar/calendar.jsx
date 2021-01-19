@@ -3,19 +3,17 @@ import {connect} from 'react-redux';
 import Header from './header.jsx';
 import Navigator from './navigator.jsx';
 import Month from './month';
-// import { getDays } from '../../api/day-api';
+import { getDays } from '../../api/day-api';
 
-export const Calendar = (props) => {
+export function Calendar(props) {
   return (
       <div>
         <Header />
         <Navigator month={props.month} year={props.year}/>
         <Month days={props.days} month={props.month} year={props.year} guests={[]} />
       </div>
-  );  
+  );
 }
-
-// modalState={this.props.modalState} />
 
 function mapStoreToProps(store) {
   return {

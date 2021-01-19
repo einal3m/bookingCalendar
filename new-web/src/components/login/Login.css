@@ -18,3 +18,28 @@
     color: red;
     font-weight: bold
 }
+
+h1 {
+    margin-bottom: 30px;
+}
+
+#login-form {
+    margin: 20px;
+    padding-top: 20px;
+    color: white;
+}
+
+.btn-outline-primary {
+    margin-top: 20px;
+    background-color: #3F6FB7;
+    border-color: white;
+    border-width: 2px;
+    width: 100%;
+    color: white;
+}
+
+.btn-outline-primary:hover {
+    color: white;
+    background-color: #325892;
+    border-color: white;
+}

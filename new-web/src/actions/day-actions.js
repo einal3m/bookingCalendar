@@ -11,9 +11,12 @@ export const loadDays = () => {
 
   return getDays(state.month, state.year).then((days) => {
   	let transformedDays = {};
-  	days.forEach(day => {
-  		transformedDays[day.day] = transformFromApi(day)
-  	});
+
+    if (days) {
+      days.forEach(day => {
+    		transformedDays[day.day] = transformFromApi(day)
+    	});
+    }
 
     store.dispatch({type: SET_DAYS, days: transformedDays});
   });
