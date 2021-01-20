@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import './login.css';
+import banner from '../../images/login_banner.jpg';
 
 async function loginUser(credentials) {
  // return fetch('http://localhost:8080/login', {
@@ -45,7 +46,7 @@ function Login({ setToken, errorMessage }) {
     <div className="login">
       <div className="row no-gutters justify-content-center">
         <div className="col-sm-3 banner">
-          <img src={'images/login_banner.jpg'} alt="" />
+          <img src={banner} alt="" />
         </div>
         <div className="col-sm-3 form">
           <form id="login-form" onSubmit={handleSubmit}>
