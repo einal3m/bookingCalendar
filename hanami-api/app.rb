@@ -3,11 +3,33 @@
 require "bundler/setup"
 require "hanami/api"
 require "hanami/middleware/body_parser"
+require "jwt"
 
 class App < Hanami::API
   use Hanami::Middleware::BodyParser, :json
 
   TABLE_NAME = 'moggs-calendar'
+
+  post '/login' do
+    puts "/login"
+    puts params
+
+    user_passwords = {
+      "melpaul" => "supersecret",
+      "kaytrev" => "sillysecret"
+    }
+
+    username = params[:username]
+    password = params[:password]
+
+    if !username.nil? && !password.nil? && user_passwords[username] == password
+      status 200
+      token = JWT.encode({id: '123'}, "secret", 'HS256')
+      json({token: token})
+    else
+      status 401
+    end
+  end
 
   post '/moggs-booking-calendar/api/v1/day' do
     table_item = {
