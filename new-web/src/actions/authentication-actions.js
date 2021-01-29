@@ -6,7 +6,7 @@ function loginSuccess() {
   store.dispatch({ type: LOGIN_SUCCESS });
 }
 
-function loginFailure() {
+export function loginFailure() {
   store.dispatch({ type: LOGIN_FAILURE });
 }
 

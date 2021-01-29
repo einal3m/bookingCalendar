@@ -16,3 +16,23 @@ export const get = async (path) => {
     console.log('Error!', e);
   }
 }
+
+export const post = async (path, body) => {
+  try {
+    let response = await fetch(fetchUrl(path), {
+      method: 'post',
+      headers: {"Content-Type": "application/json"},
+      body: JSON.stringify(body)
+    });
+
+    if (!response.ok) {
+      return { status: "unauthorized" };
+    } else {
+      let json = await response.json();
+      return { status: "ok", response: json };
+    }
+  }
+  catch(e) {
+    console.log('Error!', e);
+  }
+}

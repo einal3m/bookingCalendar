@@ -3,20 +3,9 @@ import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import styles from './Login.module.css';
 import seaElephant from '../../images/sea-elephant.png';
-
-async function loginUser(credentials) {
- // return fetch('http://localhost:8080/login', {
- //   method: 'POST',
- //   headers: {
- //     'Content-Type': 'application/json'
- //   },
- //   body: JSON.stringify(credentials)
- // })
- //   .then(data => data.json())
-  return {
-    token: 'test123'
-  };
-}
+import { loginUser } from '../../api/login-api';
+import { resetMessages } from '../../actions/notification-actions';
+import { loginFailure } from '../../actions/authentication-actions';
 
 function renderErrorMessage(errorMessage) {
   if (errorMessage) {
@@ -35,11 +24,18 @@ function Login({ setToken, errorMessage }) {
 
   const handleSubmit = async e => {
     e.preventDefault();
-    const token = await loginUser({
+    resetMessages();
+
+    const result = await loginUser({
       username,
       password
     });
-    setToken(token);
+
+    if (result.status === "ok") {
+      setToken(result.response.token);
+    } else {
+      loginFailure();
+    }
   }
 
   return (
