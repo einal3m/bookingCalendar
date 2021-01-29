@@ -1,8 +1,8 @@
 import React from 'react';
-import './app.css';
+import './App.css';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Calendar from './calendar/calendar';
-import Login from  './login/login';
+import Login from  './Login/Login';
 import ReportsList from './reports/reports-list';
 import { Provider } from 'react-redux';
 import store from '../reducers/store';

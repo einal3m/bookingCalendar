@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from "react-redux";
-import './login.css';
-import banner from '../../images/login_banner.jpg';
+import styles from './Login.module.css';
+import seaElephant from '../../images/sea-elephant.png';
 
 async function loginUser(credentials) {
  // return fetch('http://localhost:8080/login', {
@@ -21,7 +21,7 @@ async function loginUser(credentials) {
 function renderErrorMessage(errorMessage) {
   if (errorMessage) {
     return (
-      <div className='error-message'>
+      <div className={styles.errorMessage}>
         {errorMessage}
       </div>
     );
@@ -43,28 +43,31 @@ function Login({ setToken, errorMessage }) {
   }
 
   return (
-    <div className="login">
-      <div className="row no-gutters justify-content-center">
-        <div className="col-sm-3 banner">
-          <img src={banner} alt="" />
+    <div className={styles.loginPage}>
+      <div className={styles.loginPageLeft}>
+        &nbsp;
+      </div>
+      <div className={styles.loginPageRight}>
+        <div className={styles.loginForm}>
+          <h1>Login</h1>
+          <div className="form">
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="inputUsername">Username</label>
+                <input type="text" className="form-control" id="inputUsername" placeholder="Username" onChange={e => setUserName(e.target.value)} />
+              </div>
+              <div className="form-group">
+                <label htmlFor="inputPassword">Password</label>
+                <input type="password" className="form-control" id="inputPassword" placeholder="Password" onChange={e => setPassword(e.target.value)} />
+              </div>
+              <div>
+                <button type="submit" className={`btn btn-outline-primary ${styles.button}`}>Login</button>
+              </div>
+            </form>
+            {renderErrorMessage(errorMessage)}
+          </div>
         </div>
-        <div className="col-sm-3 form">
-          <form id="login-form" onSubmit={handleSubmit}>
-            <h1>Login</h1>
-            <div className="form-group">
-              <label htmlFor="inputUsername">Username</label>
-              <input type="text" className="form-control" id="inputUsername" placeholder="Username" onChange={e => setUserName(e.target.value)} />
-            </div>
-            <div className="form-group">
-              <label htmlFor="inputPassword">Password</label>
-              <input type="password" className="form-control" id="inputPassword" placeholder="Password" onChange={e => setPassword(e.target.value)} />
-            </div>
-            <div>
-              <button type="submit" className="btn btn-outline-primary">Login</button>
-            </div>
-          </form>
-          {renderErrorMessage(errorMessage)}
-        </div>
+        <img className={styles.loginLogo} src={seaElephant} alt="" />
       </div>
     </div>
   );
