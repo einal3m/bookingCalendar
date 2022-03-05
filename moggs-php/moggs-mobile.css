@@ -1,0 +1,198 @@
+
+body {
+	font-family:Arial, Helvetica, sans-serif; /* verdana,sans-serif;*/
+}
+
+#main {
+	width:480px;
+	position:absolute;
+	top:0;
+	left:0;
+	margin-left:0px;
+	color:darkslateblue;
+}
+
+#content {
+	margin:0;
+	color:black;
+}
+
+#header {
+	background:darkslateblue;
+}
+
+#header table {
+	width:100%;
+	margin:0;
+}
+
+#maintitle {
+	color:white;
+	font-size:150%;
+	background-color:#darkslateblue;
+}
+
+#whoami {
+	color:white;
+	width:190px;
+	font-weight:bold;
+}
+
+#whoami form {
+	margin-top:10px;
+}
+/* new_booking form */
+#new_booking {
+	font-size:100%;
+}
+
+/* calendar_top includes the ring image, month/year and the navigation links */
+#calendar_top {
+	width:480px;
+	padding-top:0px;
+}
+
+#links {
+	border:none;
+	margin-left:0px;
+	width:480px;
+	font-size:80%;
+}
+
+#links a {
+	color:darkslateblue;
+	text-decoration:none;
+}
+#links a:hover {
+	text-decoration:underline;
+	color:darkslateblue;
+}
+
+#title  {
+	font-size: 150%;
+	color:darkslateblue;
+	width:250px;
+	text-align:center;
+}
+
+#next_month {
+	text-align:right;
+}
+
+/* calendar_box includes the calendar table */
+#calendar_box {
+	width:480px;
+	background:#e7e8e3
+}
+.calendar {
+	border-top: darkslateblue solid 1px;
+	text-align:left;
+	width:480px;
+	margin:0;
+	border-collapse: collapse;
+}
+
+.calendar td{
+	border: black solid 1px;
+	margin:0;
+	padding:0;
+	vertical-align: top;
+	text-align:left;
+	width:68px;
+	height:60px;
+}
+
+.calendar th {
+	border: black solid 1px;
+	color:darkslateblue;
+	text-align:center;
+}
+td.blank{
+	background:none;
+}
+
+td.owners_only{
+	background:#ceddf4 url(images/oo.jpg) top left repeat;
+}
+
+.bookings {
+	width:100%;
+	margin:0;
+	padding:0;
+}
+.bookings  td{
+	border:none;
+	height:10px;
+	padding:1px;
+	font-weight:bold;
+}
+
+td.booking_mp  {
+	background:green;
+}
+td.booking_kt {
+	background:red;
+}
+td.booking_ls {
+	background:blue;
+}
+td.booking_guest {
+	background:grey;
+}
+.day_text {
+	font-size:50%;
+	display: inline;
+}
+
+.calendar a {
+	color:darkslateblue;
+	font-size:110%;
+	font-weight:bold;
+	text-decoration:none;
+	text-align:center;	
+}
+.calendar a:hover {
+	text-decoration:underline;
+	font-weight:bold;
+	color:darkslateblue;
+}
+
+
+.bookings a {
+	color:white;
+	text-decoration:none;
+	text-align:center;	
+}
+.bookings a:hover {
+	text-decoration:underline;
+	color:white;
+}
+
+/* footer contains the bottom image of the calendar 
+#footer {
+	width:400px;
+}*/
+
+
+#login_box {
+	width:320px;
+	background:black url(images/login_bg.jpg) top left no-repeat;
+
+	position:absolute;
+	top:90px;
+	margin-top:0;
+	left:50%;
+	margin-left:-160px;
+
+}
+#login_box table {
+	margin:20px;
+	width:280px;
+	background:#6998de;
+}
+#login_top td{
+	border-bottom:black solid 1px;
+	padding:5px 0 9px 0;
+	text-align:left;
+	font-weight:bold;
+}

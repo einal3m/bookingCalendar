@@ -1,0 +1,333 @@
+
+body {
+	font-family:Arial, Helvetica, sans-serif; /* verdana,sans-serif;*/
+	background:grey;
+}
+#main {
+	width:976px;
+	position:absolute;
+	top:30;
+	left:50%;
+	margin-left:-488px;
+	color:black;
+	background:white;
+}
+
+#content {
+	margin:0;
+}
+
+#header {
+	color: white;
+	background:grey url(images/calendar_header.jpg) top left no-repeat;
+	height: 145;
+	border-top: 5px solid black;
+	padding-top: 0px;
+}
+
+#header table {
+	width:100%;
+}
+
+#maintitle {
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	text-align:right;
+	color:black;
+	font-size:250%;
+	padding-bottom:60px;
+}
+
+#whoami {
+	color:white;
+	font-weight:bold;
+	text-align: right;
+}
+
+
+/* calendar_top includes the month/year and the navigation links */
+#calendar_top {
+	color:white;
+	background:black; /*#005480;*/
+	padding-top:5px;
+	padding-bottom:5px;
+	padding-left:20px;
+	padding-right:20px;
+}
+#links {
+	color:white;
+	width:100%;
+}
+
+#links td {
+	width:33%;
+	}
+
+#next_month {
+	text-align: right;
+}
+	
+#title  {
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-size: 250%;
+	text-align:center;
+}
+
+
+/* calendar_box includes the calendar table */
+#calendar_box {
+	background: white;
+}
+.calendar {
+	text-align:left;
+	width:946px;
+	margin-left:15px;
+	margin-bottom:15px;
+	border-collapse: collapse;
+}
+
+.calendar th {
+	border: none;
+	text-align:center;
+	height:40px;
+}
+
+.calendar td{
+	border: #cccccc solid 1px;
+	margin:0;
+	padding:0;
+	vertical-align: top;
+	text-align:left;
+	height:105px;
+}
+
+td.day {
+	width:135px;
+}
+
+td.blank{
+	background:none;
+}
+
+td.school_holiday{
+	background:white url(images/school_holiday.gif) top left repeat;
+}
+
+/* each day contains a table of day no, public holiday, bookings and notes */
+table.day_data{
+	width:100%;
+}
+.day_data th {
+	text-align:left;
+	height:10px;
+}
+
+th.day_num {
+	font-size:150%;
+}
+
+th.public_holiday {
+	font-size:80%;
+	font-weight:normal;
+}
+
+.day_data  td{
+	height:10px;
+	font-weight:bold;
+	border:none;
+}
+
+td.day_num {
+	font-size:150%;
+	width:20px;
+}
+
+td.booking_mp  {
+	color:green;
+}
+td.booking_kt {
+	color:firebrick;
+}
+td.booking_ls {
+	color:darkslateblue;
+}
+td.booking_guest {
+	color:slategrey;
+}
+td.booking_fs {
+	color:mediumvioletred;
+}
+
+td.booking_notes {
+	font-weight:normal;
+	font-size: 80%;
+}
+
+/* login page */
+#login_box {
+	width:450;
+	height:329;
+    border: 5px solid black;
+    border-radius: 3px 3px 3px 3px;
+	background:black url(images/login_bg.jpg) top left no-repeat;
+	position:absolute;
+	top:50%;
+	margin-top:-200;
+	left:50%;
+	margin-left:-225px;
+
+}
+#login_box table {
+	margin:48px;
+	width:280px;
+	color:white;
+	background:black;
+}
+
+td.login_top{
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	text-align:center;
+	font-weight:bold;
+	font-size:32px;
+}
+
+td.login_text{
+	font-size:90%;
+	padding-left:36px;
+	padding-top: 10px;
+}
+
+td.login_input {
+	text-align:center;
+}
+.login_input input{
+	border:1px solid white;
+	font-size:24px;
+	background-color:white;
+	width:200px;
+}
+td.login_bottom{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align:center;
+}
+
+.login_bottom input {
+	font-size:18px;
+}
+
+/* pop-up stuff*/
+#backgroundPopup {
+    z-index:1;
+    position: fixed;
+    display:none;
+    height:100%;
+    width:100%;
+    background:#000000;
+    top:0px;
+    left:0px;
+}
+#toPopup {
+    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #e1e8ed;
+    border-radius: 3px;
+    color: #333333;
+    display: none;
+    font-size: 14px;
+    left: 50%;
+    margin-left: -302px;
+    position: fixed;
+    top: 20%;
+    width: 600px;
+    z-index: 2;
+}
+
+div.loader {
+    background: url(images/loading.gif) no-repeat scroll 0 0 transparent;
+    height: 32px;
+    width: 32px;
+    display: none;
+    z-index: 9999;
+    top: 40%;
+    left: 50%;
+    position: absolute;
+    margin-left: -10px;
+}
+
+div#popup_content {
+    /*margin: 4px 7px;
+     remove this comment if you want scroll bar
+    overflow-y:scroll;
+    height:200px
+    */
+}
+
+#popup_date_info {
+	background-color:black;
+    border-bottom: 1px solid #e1e8ed;
+	color:white;
+	padding-bottom:10px;
+	padding-left:20px;
+}
+#popup_date1 {
+	font-size:72px;
+	float:left;
+	padding-right:20px;
+}
+#popup_date2 {
+	font-size:24px;
+	padding-top:16px;
+}
+#popup_date3 {
+	font-size:24px;
+	font-weight:bold;
+}
+#popup_form {
+}
+
+#popup_form h3 {
+	margin-bottom:5px;
+}
+
+.form_bookings {
+	float:left;
+}
+
+.form_day_info {
+	float:right;
+	padding-right:20px;
+	padding-bottom:20px;
+}
+
+.form_footer {
+	clear:both;
+	border-top: 1px solid #e1e8ed;	
+	padding:10px;
+	padding-right:20px;
+	text-align:right;
+}
+#form_cancel, #form_save{
+	font-size:16px;
+	border:1px solid grey;
+	color:black;
+	padding: 5px 10px;
+	border-radius: 3px;
+	background-color: white;
+}
+
+/* stats page */
+#stats_top {
+	color:white;
+	background:black;
+	padding-top:5px;
+	padding-bottom:5px;
+	font-family:"Trebuchet MS", Helvetica, sans-serif;
+	font-size: 250%;
+	text-align:center;
+
+}
+
+#stats_box{
+	background: white;
+}
+
